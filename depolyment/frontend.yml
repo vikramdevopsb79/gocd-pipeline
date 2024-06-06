@@ -1,6 +1,6 @@
 format_version: 10
 pipelines:
-  backend:
+  frontend:
     group: App-Deployment
     label_template: ${COUNT}
     lock_behavior: none
@@ -12,9 +12,9 @@ pipelines:
         auto_update: true
         branch: main
         environment_variables:
-          component: backend
+          component: frontend
           secure_variables:
-          SSH_PASSWORD: "AES:GJpOsKchZolqf2Gylrqymw==:48C77QmHmE7ihFUNFmoXRw=="
+            SSH_PASSWORD: "AES:GJpOsKchZolqf2Gylrqymw==:48C77QmHmE7ihFUNFmoXRw=="
     stages:
       - DEV:
           fetch_materials: true

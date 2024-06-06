@@ -1,6 +1,6 @@
 format_version: 10
 pipelines:
-  backend:
+  mysql:
     group: App-Deployment
     label_template: ${COUNT}
     lock_behavior: none
@@ -12,13 +12,13 @@ pipelines:
         auto_update: true
         branch: main
         environment_variables:
-          component: backend
+          component: mysql
           secure_variables:
-          SSH_PASSWORD: "AES:GJpOsKchZolqf2Gylrqymw==:48C77QmHmE7ihFUNFmoXRw=="
+            SSH_PASSWORD: "AES:GJpOsKchZolqf2Gylrqymw==:48C77QmHmE7ihFUNFmoXRw=="
     stages:
       - DEV:
           fetch_materials: true
-        environment_variables:
+          environment_variables:
           env: dev
           jobs:
             ansible:
@@ -59,7 +59,7 @@ pipelines:
                     run_if: passed
       - PROD:
           fetch_materials: true
-        environment_variables:
+          environment_variables:
           env: prod
           approval:
             type: manual
