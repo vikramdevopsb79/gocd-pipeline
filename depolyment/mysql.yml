@@ -12,7 +12,7 @@ pipelines:
         auto_update: true
         branch: main
     secure_variables:
-       SSH_PASSWORD: "AES:GJpOsKchZolqf2Gylrqymw==:48C77QmHmE7ihFUNFmoXRw=="
+       SSH_PASSWORD: "AES:Cug4/rz4L7ZGSR8QpQo80Q==:I/llXGj7WQP/u/PgVrCL0w=="
     environment_variables:
        component: mysql
     stages:
