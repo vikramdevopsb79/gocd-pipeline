@@ -1,7 +1,7 @@
 format_version: 10
 pipelines:
   ansible-app-deployment:
-    group: App-Deployments
+    group: Templates
     label_template: ${COUNT}
     lock_behavior: none
     display_order: -1
@@ -13,6 +13,8 @@ pipelines:
         branch: main
     secure_variables:
       SSH_PASSWORD: "AES:Cug4/rz4L7ZGSR8QpQo80Q==:I/llXGj7WQP/u/PgVrCL0w=="
+    environment_variables:
+      pipeline: "true"
     stages:
       - DEV:
           fetch_materials: true
