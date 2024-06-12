@@ -17,7 +17,7 @@ pipelines:
     stages:
      - create:
           fetch_materials: true
-          environment_variables: { env: dev,sec: secret}
+          environment_variables: { env: dev}
           approval: { type: manual }
           jobs:
             terraform:
