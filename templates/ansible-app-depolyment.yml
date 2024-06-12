@@ -20,6 +20,7 @@ pipelines:
           fetch_materials: true
           environment_variables:
             env: dev
+            sec: secret
           approval:
             type: manual
           jobs:
@@ -63,6 +64,7 @@ pipelines:
           fetch_materials: true
           environment_variables:
             env: prod
+            sec: secret
           approval:
             type: manual
           jobs:
