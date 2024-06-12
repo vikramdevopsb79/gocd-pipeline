@@ -11,6 +11,9 @@ pipelines:
         shallow_clone: true
         auto_update: true
         branch: main
+    secure_variables:
+      SSH_PASSWORD: "AES:Cug4/rz4L7ZGSR8QpQo80Q==:I/llXGj7WQP/u/PgVrCL0w=="
+      vault_token: "AES:+hjq0vfp/guLlHqYUgyL4Q==:Xfa5iKr+wXBoFuiWxjXtCg=="
     stages:
      - create:
           fetch_materials: true
