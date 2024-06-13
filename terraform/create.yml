@@ -13,7 +13,7 @@ pipelines:
         branch: main
     secure_variables:
       SSH_PASSWORD: "AES:Cug4/rz4L7ZGSR8QpQo80Q==:I/llXGj7WQP/u/PgVrCL0w=="
-      vault_token: "AES:+hjq0vfp/guLlHqYUgyL4Q==:Xfa5iKr+wXBoFuiWxjXtCg=="
+      vault_token: "AES:ii0F4DgSqqL47hqJe1O/NA==:NU1mpkXZM8Mxl7Jdwrglqewq0VU7DPUl7o4InxTyous="
     stages:
       - DEV:
           fetch_materials: true
