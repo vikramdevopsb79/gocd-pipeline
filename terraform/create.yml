@@ -17,21 +17,19 @@ pipelines:
     stages:
       - DEV:
           fetch_materials: true
-          environment_variables: { env: dev}
+          environment_variables: { env: dev,action: apply}
           approval: { type: manual }
           jobs:
             terraform:
               timeout: 0
               tasks:
-                - exec: { command: terraform, arguments: ["init", "-backend-config" , "env-dev/state.tfvars"] }
-                - exec: { command: terraform, arguments: ["apply", "-var-file" , "env-dev/main.tfvars", "-auto-approve"] }
+                - exec: { command: bash, arguments: [run.sh] }
       - PROD:
           fetch_materials: true
-          environment_variables: { env: dev}
+          environment_variables: { env: dev,action: apply}
           approval: { type: manual }
           jobs:
             terraform:
               timeout: 0
               tasks:
-                - exec: { command: terraform, arguments: ["init", "-backend-config" , "env-prod/state.tfvars"] }
-                - exec: { command: terraform, arguments: ["apply", "-var-file" , "env-prod/main.tfvars", "-auto-approve"] }
+                - exec: { command: bash, arguments: [run.sh] }
