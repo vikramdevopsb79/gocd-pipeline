@@ -1,0 +1,31 @@
+format_version: 10
+pipelines:
+  ci-server:
+    group: Tools
+    label_template: ${COUNT}
+    lock_behavior: none
+    display_order: -1
+    materials:
+      git-a66247d:
+        git: https://github.com/vikramdevopsb79/tools-automation
+        shallow_clone: true
+        auto_update: true
+        branch: main
+    secure_variables:
+      SSH_PASSWORD: "AES:NlOzyD4Fe4iIwO82xlKPJg==:VEWZuEsazEq/guHN9lq+Qg=="
+      vault_token: "AES:zTKvspdnVjcyeTYti5M6Eg==:Twxus/tVYUl4kjMlXCez5aWlHRhlZZKSvZ1dGtEtkTs="
+    environment_variables:
+      tool_name: ci-server
+    stages:
+      - DEV:
+          fetch_materials: true
+          approval:
+            type: manual
+          jobs:
+            ansible:
+              timeout: 0
+              tasks:
+                - exec:
+                    command: bash
+                    arguments:
+                      - setup-tool-service.sh
