@@ -13,7 +13,7 @@ pipelines:
         branch: main
     secure_variables:
        SSH_PASSWORD: "AES:NlOzyD4Fe4iIwO82xlKPJg==:VEWZuEsazEq/guHN9lq+Qg=="
-       vault_token: "AES:zTKvspdnVjcyeTYti5M6Eg==:Twxus/tVYUl4kjMlXCez5aWlHRhlZZKSvZ1dGtEtkTs="
+       vault_token: "AES:dad4E55Y7tyN+u+sS1JR9Q==:pjdghRdgYql2Rd6gmpJkuAVvHYCMckIp3HXlmJfx2GM="
     environment_variables:
        component: mysql
     template: ansible-app-deployment
